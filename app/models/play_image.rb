@@ -1,5 +1,7 @@
 class PlayImage < ApplicationRecord
   has_many_attached :images
+  
+  scope :get_image_attachments, -> { map { |record| record.images.attachments } }
 
   validate :acceptable_image
 

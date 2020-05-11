@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   
   get 'plays/home'
   post 'store_images', to: 'plays#store_images'
+  post 'plays', to: 'plays#create'
+  get 'plays/game'
 end
