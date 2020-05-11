@@ -1,0 +1,16 @@
+<% if @images.errors.any? %>
+  <ul>  
+    <% @images.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+</ul>
+<% end %>
+<h2>Upload Image files </h2>
+<%= form_for @images, url: { controller: 'plays', action: 'store_images'} do |f| %>
+  <fieldset>
+    <legend>Upload images</legend>
+    <label>Select Image</label><br />
+    <%= f.file_field  :images, multiple: true %><br /><br />
+    <%= f.submit 'Upload' %>
+  </fieldset>
+<% end %>
